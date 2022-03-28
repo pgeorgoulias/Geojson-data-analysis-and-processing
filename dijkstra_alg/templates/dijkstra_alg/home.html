@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+
+{%  include 'navbar.html' %}
+
+{% block content %}
+
+<h1> home template</h1>
+    <div>
+         {% for port in ports %}
+             <div>
+                 <h5>{{port.id}} -- {{port.name}}</h5>
+             </div>
+         {% endfor %}
+     </div>
+
+{% endblock content%}
