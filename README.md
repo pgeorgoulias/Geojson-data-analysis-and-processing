@@ -1,5 +1,5 @@
-# FinalYearProject
-Supporting software for maritime logistics and transportation
+# Supporting software for maritime logistics and transportation
+COP
 
 Step 1: Open the command prompt and set the current directory to the one that the project 
 	stored.
