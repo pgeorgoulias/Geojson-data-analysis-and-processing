@@ -3,8 +3,14 @@ from .models import PortNode
 
 
 class Input(forms.Form):
-    start = forms.CharField(label='start', max_length=100)
-    end = forms.CharField(label='end', max_length=100)
+    start = forms.CharField(label='Departure', max_length=100, error_messages={
+        'required': 'Enter a departure location.',
+        'max_length': 'Use 100 characters or fewer.',
+    })
+    end = forms.CharField(label='Destination', max_length=100, error_messages={
+        'required': 'Enter a destination location.',
+        'max_length': 'Use 100 characters or fewer.',
+    })
 
 class SubForm(forms.ModelForm):
 

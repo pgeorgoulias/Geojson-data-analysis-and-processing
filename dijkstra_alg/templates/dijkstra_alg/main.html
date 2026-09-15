@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#174f48">
+    <title>Maritime — Route planner</title>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.js" defer></script>
+    <link rel="stylesheet" href="{% static 'dijkstra_alg/css/planner.css' %}">
+</head>
+<body>
+    <main>
+        <div id="map" data-ports-url="{% url 'map-ports' %}" data-network-url="{% url 'map-network' %}" role="region" aria-label="Interactive maritime route map"></div>
+        <section class="planner" aria-label="Route planner">
+            <header class="brand">
+                <span class="brand-mark" aria-hidden="true">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="m12 3 7 16-7-4-7 4 7-16Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M12 3v12" stroke="currentColor" stroke-width="1.5"/></svg>
+                </span>
+                <div><div class="brand-name">Maritime</div><div class="brand-caption">Routes &amp; connections</div></div>
+                <button class="panel-toggle" id="panel-toggle" type="button" aria-expanded="true" aria-controls="panel-content" aria-label="Minimize route planner" hidden>
+                    <svg width="15" height="15" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m5 12 5-5 5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </button>
+            </header>
+            <div class="panel-content" id="panel-content">
+                <p class="eyebrow">Route planner</p>
+                <h1>Chart your next journey.</h1>
+                <p class="description">Explore maritime connections. Choose your departure and destination to find a route between them.</p>
+                <form id="route-form" novalidate action="{% url 'output' %}" method="post">
+                    {% csrf_token %}
+                    <div class="route-fields">
+                        <div class="field">
+                            <label for="start">Departure</label>
+                            <input id="start" type="text" name="start" value="{{ form.start.value|default_if_none:'' }}" placeholder="e.g. Piraeus, Greece" maxlength="100" required aria-describedby="start-errors"{% if form.start.errors %} aria-invalid="true"{% endif %}>
+                            <div class="field-errors" id="start-errors" role="alert"{% if not form.start.errors %} hidden{% endif %}>{{ form.start.errors }}</div>
+                        </div>
+                        <div class="field destination">
+                            <label for="end">Destination</label>
+                            <input id="end" type="text" name="end" value="{{ form.end.value|default_if_none:'' }}" placeholder="e.g. Rotterdam, Netherlands" maxlength="100" required aria-describedby="end-errors"{% if form.end.errors %} aria-invalid="true"{% endif %}>
+                            <div class="field-errors" id="end-errors" role="alert"{% if not form.end.errors %} hidden{% endif %}>{{ form.end.errors }}</div>
+                        </div>
+                    </div>
+                    {% if form.non_field_errors %}<div class="feedback" role="alert">{{ form.non_field_errors }}</div>{% endif %}
+                    {% if message %}<div class="feedback info" role="status"><p>{{ message }}</p></div>{% endif %}
+                    <button class="submit-button" id="find-route" type="submit">
+                        <span id="submit-label">Find route</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m-5-5 5 5-5 5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                </form>
+                <details class="map-layers">
+                    <summary>Map layers</summary>
+                    <div class="layer-options">
+                        <label><input id="show-ports" type="checkbox" checked disabled> Ports</label>
+                        <label><input id="show-network" type="checkbox" checked disabled> Shipping lanes</label>
+                    </div>
+                    <p>Hover over a port for details, or tap it on a touch screen.</p>
+                </details>
+                <details class="journey-options">
+                    <summary>Journey preferences <span class="soon">Coming soon</span></summary>
+                    <div class="option-row">
+                        <label><input type="radio" name="option" value="fastest" disabled> Fastest</label>
+                        <label><input type="radio" name="option" value="safest" disabled> Safest</label>
+                    </div>
+                    <p>These preferences will be available in a future update.</p>
+                </details>
+                {% if coord_list %}
+                <section class="route-summary" aria-label="Calculated route">
+                    <div class="route-ready" role="status">Your route is ready</div>
+                    <p class="route-names">{{ form.start.value }} &rarr; {{ form.end.value }}</p>
+                    <div class="route-actions">
+                        <button type="button" class="text-button" id="fit-route" hidden>Show entire route</button>
+                        <a href="{% url 'input' %}">Clear route</a>
+                    </div>
+                </section>
+                {% endif %}
+                <div class="panel-footer">
+                    <svg width="13" height="13" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="7" stroke="currentColor"/><path d="M10 6v4l3 2" stroke="currentColor" stroke-linecap="round"/></svg>
+                    <span>Maritime logistics &amp; transportation</span>
+                </div>
+            </div>
+        </section>
+        {% include "dijkstra_alg/about_project.html" %}
+        <div class="map-note" aria-label="Map legend">
+            <span class="legend-item"><span class="legend-port" aria-hidden="true"></span> Ports</span>
+            <span class="legend-item"><span class="legend-network" aria-hidden="true"></span> Shipping lanes</span>
+            {% if coord_list %}<span class="legend-item"><span class="legend-line" aria-hidden="true"></span> Your route</span>{% endif %}
+        </div>
+        <div class="map-status" id="map-status" role="status">Loading your map&hellip;</div>
+        <noscript><div class="map-status">Enable JavaScript to view the interactive map.</div></noscript>
+    </main>
+    {{ mapbox_public_token|json_script:"mapbox-public-token" }}
+    {% if coord_list %}{{ coord_list|json_script:"route-coordinates" }}{% endif %}
+    <script src="{% static 'dijkstra_alg/js/map-overlays.js' %}" defer></script>
+    <script src="{% static 'dijkstra_alg/js/interface.js' %}" defer></script>
+    <script src="{% static 'dijkstra_alg/js/planner.js' %}" defer></script>
+</body>
+</html>
