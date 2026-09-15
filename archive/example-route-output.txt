@@ -1,0 +1,517 @@
+{
+    "properties": {
+        "From Node0": 120506,
+        "Route Freq": 2,
+        "Impedence0": 91.59,
+        "id": "a625nger13op",
+        "To Node0": 130835,
+        "Name0": "",
+        "Length0": 1.39
+    },
+    "type": "Feature",
+    "geometry": {
+        "type": "LineString",
+        "coordinates": [
+            [
+                24.35946083,
+                37.66410828
+            ],
+            [
+                23.60000038,
+                36.49998856
+            ]
+        ]
+    }
+}{
+    "properties": {
+        "From Node0": 130835,
+        "Route Freq": 3,
+        "Impedence0": 106.6,
+        "id": "a625ngc0vz7v",
+        "To Node0": 132330,
+        "Name0": "",
+        "Length0": 1.91
+    },
+    "type": "Feature",
+    "geometry": {
+        "type": "LineString",
+        "coordinates": [
+            [
+                23.60000038,
+                36.49998856
+            ],
+            [
+                21.70000076,
+                36.29999924
+            ]
+        ]
+    }
+}{
+    "properties": {
+        "From Node0": 132330,
+        "Route Freq": 113507,
+        "Impedence0": 361.7,
+        "id": "a625ngfqjv01",
+        "To Node0": 131449,
+        "Name0": "",
+        "Length0": 6.501
+    },
+    "type": "Feature",
+    "geometry": {
+        "type": "LineString",
+        "coordinates": [
+            [
+                21.70000076,
+                36.29999924
+            ],
+            [
+                15.19999027,
+                36.40000153
+            ]
+        ]
+    }
+}{
+    "properties": {
+        "From Node0": 131449,
+        "Route Freq": 8,
+        "Impedence0": 244,
+        "id": "a625ngjscaw5",
+        "To Node0": 121925,
+        "Name0": "",
+        "Length0": 4.342
+    },
+    "type": "Feature",
+    "geometry": {
+        "type": "LineString",
+        "coordinates": [
+            [
+                15.19999027,
+                36.40000153
+            ],
+            [
+                11,
+                37.49998093
+            ]
+        ]
+    }
+}{
+    "properties": {
+        "From Node0": 121925,
+        "Route Freq": 61127,
+        "Impedence0": 192.1,
+        "id": "a625ngfiwsoe",
+        "To Node0": 122722,
+        "Name0": "",
+        "Length0": 3.501
+    },
+    "type": "Feature",
+    "geometry": {
+        "type": "LineString",
+        "coordinates": [
+            [
+                11,
+                37.49998093
+            ],
+            [
+                7.5,
+                37.39999008
+            ]
+        ]
+    }
+}{
+    "properties": {
+        "From Node0": 122722,
+        "Route Freq": 76911,
+        "Impedence0": 242.2,
+        "id": "a625ngivmmwq",
+        "To Node0": 124674,
+        "Name0": "",
+        "Length0": 4.405
+    },
+    "type": "Feature",
+    "geometry": {
+        "type": "LineString",
+        "coordinates": [
+            [
+                7.5,
+                37.39999008
+            ],
+            [
+                3.099989891,
+                37.19998932
+            ]
+        ]
+    }
+}{
+    "properties": {
+        "From Node0": 124674,
+        "Route Freq": 0,
+        "Impedence0": 13.02,
+        "id": "a625nggbsv64",
+        "To Node0": 125199,
+        "Name0": "",
+        "Length0": 0.23
+    },
+    "type": "Feature",
+    "geometry": {
+        "type": "LineString",
+        "coordinates": [
+            [
+                3.099989891,
+                37.19998932
+            ],
+            [
+                2.87658,
+                37.1436882
+            ]
+        ]
+    }
+}{
+    "properties": {
+        "From Node0": 125199,
+        "Route Freq": 62890,
+        "Impedence0": 205.44,
+        "id": "a625ngf1ij3u",
+        "To Node0": 133230,
+        "Name0": "",
+        "Length0": 3.602
+    },
+    "type": "Feature",
+    "geometry": {
+        "type": "LineString",
+        "coordinates": [
+            [
+                2.87658,
+                37.1436882
+            ],
+            [
+                -0.5999900103,
+                36.20000076
+            ]
+        ]
+    }
+}{
+    "properties": {
+        "From Node0": 133230,
+        "Route Freq": 4,
+        "Impedence0": 130.1,
+        "id": "a625ngc02h6g",
+        "To Node0": 136502,
+        "Name0": "",
+        "Length0": 2.319
+    },
+    "type": "Feature",
+    "geometry": {
+        "type": "LineString",
+        "coordinates": [
+            [
+                -0.5999900103,
+                36.20000076
+            ],
+            [
+                -2.900000095,
+                35.89997864
+            ]
+        ]
+    }
+}{
+    "properties": {
+        "From Node0": 136502,
+        "Route Freq": 1568718,
+        "Impedence0": 100.9,
+        "id": "a625ng4smsst",
+        "To Node0": 135469,
+        "Name0": "",
+        "Length0": 1.803
+    },
+    "type": "Feature",
+    "geometry": {
+        "type": "LineString",
+        "coordinates": [
+            [
+                -2.900000095,
+                35.89997864
+            ],
+            [
+                -4.699999809,
+                35.99998856
+            ]
+        ]
+    }
+}{
+    "properties": {
+        "From Node0": 135469,
+        "Route Freq": 2,
+        "Impedence0": 58.8,
+        "id": "a625ng5vyt1r",
+        "To Node0": 136033,
+        "Name0": "",
+        "Length0": 1.051
+    },
+    "type": "Feature",
+    "geometry": {
+        "type": "LineString",
+        "coordinates": [
+            [
+                -4.699999809,
+                35.99998856
+            ],
+            [
+                -5.749989986,
+                35.94998932
+            ]
+        ]
+    }
+}{
+    "properties": {
+        "From Node0": 136033,
+        "Route Freq": 25,
+        "Impedence0": 774.8,
+        "id": "a625ngh7g4yy",
+        "To Node0": 195006,
+        "Name0": "",
+        "Length0": 12.529
+    },
+    "type": "Feature",
+    "geometry": {
+        "type": "LineString",
+        "coordinates": [
+            [
+                -5.749989986,
+                35.94998932
+            ],
+            [
+                -11.12644005,
+                32.53131866
+            ],
+            [
+                -16.10000038,
+                28.89999008
+            ]
+        ]
+    }
+}{
+    "properties": {
+        "From Node0": 195006,
+        "Route Freq": 76,
+        "Impedence0": 2636.3,
+        "id": "a625ngktdzd1",
+        "To Node0": 202872,
+        "Name0": "",
+        "Length0": 38.491
+    },
+    "type": "Feature",
+    "geometry": {
+        "type": "LineString",
+        "coordinates": [
+            [
+                -16.10000038,
+                28.89999008
+            ],
+            [
+                -18.66890907,
+                24.72369003
+            ],
+            [
+                -21.07077026,
+                20.50411987
+            ],
+            [
+                -23.3438797,
+                16.25119019
+            ],
+            [
+                -25.52082062,
+                11.97332001
+            ],
+            [
+                -27.62999916,
+                7.677740097
+            ],
+            [
+                -29.69708061,
+                3.371220112
+            ],
+            [
+                -31.74603081,
+                -0.9400600195
+            ],
+            [
+                -33.79999924,
+                -5.250020027
+            ]
+        ]
+    }
+}{
+    "properties": {
+        "From Node0": 202872,
+        "Route Freq": 7,
+        "Impedence0": 252.9,
+        "id": "a625ng6fz4dt",
+        "To Node0": 202908,
+        "Name0": "",
+        "Length0": 3.662
+    },
+    "type": "Feature",
+    "geometry": {
+        "type": "LineString",
+        "coordinates": [
+            [
+                -33.79999924,
+                -5.250020027
+            ],
+            [
+                -34.70000076,
+                -8.800009727
+            ]
+        ]
+    }
+}{
+    "properties": {
+        "From Node0": 202908,
+        "Route Freq": 8,
+        "Impedence0": 307.5,
+        "id": "a625ngcgflzp",
+        "To Node0": 202985,
+        "Name0": "",
+        "Length0": 4.46
+    },
+    "type": "Feature",
+    "geometry": {
+        "type": "LineString",
+        "coordinates": [
+            [
+                -34.70000076,
+                -8.800009727
+            ],
+            [
+                -36.20000076,
+                -13.00000954
+            ]
+        ]
+    }
+}{
+    "properties": {
+        "From Node0": 202985,
+        "Route Freq": 15,
+        "Impedence0": 530.7,
+        "id": "a625ngi8oyfr",
+        "To Node0": 203084,
+        "Name0": "",
+        "Length0": 7.739
+    },
+    "type": "Feature",
+    "geometry": {
+        "type": "LineString",
+        "coordinates": [
+            [
+                -36.20000076,
+                -13.00000954
+            ],
+            [
+                -37.82024002,
+                -16.50708961
+            ],
+            [
+                -39.5,
+                -20.00003052
+            ]
+        ]
+    }
+}{
+    "properties": {
+        "From Node0": 203084,
+        "Route Freq": 25552213,
+        "Impedence0": 268,
+        "id": "a625nghbd8pq",
+        "To Node0": 203128,
+        "Name0": "",
+        "Length0": 3.936
+    },
+    "type": "Feature",
+    "geometry": {
+        "type": "LineString",
+        "coordinates": [
+            [
+                -39.5,
+                -20.00003052
+            ],
+            [
+                -41.29999924,
+                -23.50001907
+            ]
+        ]
+    }
+}{
+    "properties": {
+        "From Node0": 203128,
+        "Route Freq": 3,
+        "Impedence0": 124.4,
+        "id": "a625ng8jonuf",
+        "To Node0": 203125,
+        "Name0": "",
+        "Length0": 1.96
+    },
+    "type": "Feature",
+    "geometry": {
+        "type": "LineString",
+        "coordinates": [
+            [
+                -41.29999924,
+                -23.50001907
+            ],
+            [
+                -43.25,
+                -23.29999924
+            ]
+        ]
+    }
+}{
+    "properties": {
+        "From Node0": 203125,
+        "Route Freq": 6,
+        "Impedence0": 204.8,
+        "id": "a625ngg7v9yq",
+        "To Node0": 203132,
+        "Name0": "",
+        "Length0": 3.21
+    },
+    "type": "Feature",
+    "geometry": {
+        "type": "LineString",
+        "coordinates": [
+            [
+                -43.25,
+                -23.29999924
+            ],
+            [
+                -46.29999924,
+                -24.29999924
+            ]
+        ]
+    }
+}{
+    "properties": {
+        "From Node0": 203132,
+        "Route Freq": 53130,
+        "Impedence0": 196.02,
+        "id": "a625ngj1saux",
+        "To Node0": 203126,
+        "Name0": "",
+        "Length0": 3.043
+    },
+    "type": "Feature",
+    "geometry": {
+        "type": "LineString",
+        "coordinates": [
+            [
+                -46.29999924,
+                -24.29999924
+            ],
+            [
+                -43.41038132,
+                -23.34690094
+            ]
+        ]
+    }
+}

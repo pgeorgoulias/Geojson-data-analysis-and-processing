@@ -1,0 +1,16 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.sqlite3
+.env
+.env.*
+!.env.example
+.mapbox-public-token
+.DS_Store
+staticfiles/
+.pytest_cache/
+.coverage
+htmlcov/
+~$*
+~WRL*.tmp

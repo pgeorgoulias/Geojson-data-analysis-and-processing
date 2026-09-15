@@ -1,0 +1,78 @@
+<button class="project-card" id="open-project" type="button" aria-haspopup="dialog" aria-controls="project-dialog" aria-expanded="false" hidden>
+    <span class="project-card-icon" aria-hidden="true">i</span>
+    <span><strong>About this project</strong><span class="project-card-caption">An experiment in maritime routing</span></span>
+    <svg width="16" height="16" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 15 15 5M6 5h9v9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</button>
+<dialog class="project-dialog" id="project-dialog" aria-labelledby="project-title">
+    <div class="project-sheet">
+        <header class="project-header">
+            <div><p class="eyebrow">Maritime &middot; Project notes</p><h2 id="project-title">About this project</h2></div>
+            <button class="project-close" id="close-project" type="button" aria-label="Close project information" autofocus>
+                <svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="m5 5 10 10M15 5 5 15" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </button>
+        </header>
+        <div class="project-body">
+            <nav class="project-nav" aria-label="Project information sections">
+                <span class="eyebrow">In this guide</span>
+                <a href="#project-overview">The idea</a>
+                <a href="#project-routing">How routing works</a>
+                <a href="#project-data">The datasets</a>
+                <a href="#project-use">Using the map</a>
+                <a href="#project-limits">Scope &amp; limitations</a>
+            </nav>
+            <div class="project-article">
+                <section id="project-overview" class="project-intro">
+                    <p class="eyebrow">Experimental university project</p>
+                    <h3>Exploring shortest paths<br> across a maritime network.</h3>
+                    <p class="project-lead">How can geographic data become a route? This university project explores that question by applying Dijkstra’s shortest-path algorithm to a shipping network stored in GeoJSON.</p>
+                    <p>The aim is to connect graph theory with a working, interactive application: read geographic features, turn them into a weighted graph, calculate a route and make the result easy to inspect on a map.</p>
+                    <div class="project-concepts" aria-label="Project concepts"><span>GeoJSON datasets</span><span>Directed graphs</span><span>Dijkstra’s algorithm</span></div>
+                </section>
+                <section id="project-routing" class="project-section">
+                    <p class="eyebrow">01 / From a place to a path</p>
+                    <h3>How routing works</h3>
+                    <ol class="routing-steps">
+                        <li><strong>Locate the places.</strong><span>Departure and destination names are geocoded through Nominatim to obtain their coordinates.</span></li>
+                        <li><strong>Find nearby network points.</strong><span>A k-d tree matches each location to its nearest endpoint in the shipping network.</span></li>
+                        <li><strong>Calculate a shortest path.</strong><span>Dijkstra’s algorithm explores directed connections and finds a path with the lowest total of the dataset’s stored <code>Length0</code> weights.</span></li>
+                        <li><strong>Draw the result.</strong><span>The chosen segments are joined in order and displayed as a sharp route above the background shipping lanes.</span></li>
+                    </ol>
+                </section>
+                <section id="project-data" class="project-section">
+                    <p class="eyebrow">02 / Geography behind the map</p>
+                    <h3>Two datasets, distinct roles</h3>
+                    <div class="project-data-grid">
+                        <article><span class="data-symbol network-symbol" aria-hidden="true"></span><h4>Shipping network</h4><p>The historical network contains 8,273 directed segments. Its metadata attributes it to Oak Ridge National Labs’ transportation network group, with a publication date in 2000.</p><p>Its endpoints include offshore waypoints as well as coastal connections. These segments provide the graph used for routing.</p></article>
+                        <article><span class="data-symbol port-symbol" aria-hidden="true"></span><h4>Port catalogue</h4><p>The bundled catalogue contains 3,582 sea, river, lake and other port records. The highlighted circles use these recorded locations.</p><p>Port cards show the supplied name, country, code, type and coordinates. Missing information is labelled as not listed.</p></article>
+                    </div>
+                    <p class="project-note">The catalogue and routing network are independent. A visible port does not guarantee a connected route to every other location.</p>
+                </section>
+                <section id="project-use" class="project-section">
+                    <p class="eyebrow">03 / A quick guide</p>
+                    <h3>Using the map</h3>
+                    <ul class="project-tips">
+                        <li><strong>Plan a route:</strong> enter two place names and select <em>Find route</em>. Adding a country can help distinguish places with similar names.</li>
+                        <li><strong>Explore ports:</strong> hover over a highlighted circle for basic details. Click or tap to keep its card open; close the card or tap elsewhere to dismiss it.</li>
+                        <li><strong>Adjust the view:</strong> use <em>Map layers</em> to show or hide ports and shipping lanes. Zoom, pan or enter fullscreen to explore.</li>
+                        <li><strong>Review the result:</strong> <em>Show entire route</em> brings the path back into view. <em>Clear route</em> starts a new search.</li>
+                        <li><strong>Make more room:</strong> minimize the planner using its arrow. On small screens, it minimizes automatically after a successful search.</li>
+                    </ul>
+                </section>
+                <section id="project-limits" class="project-section">
+                    <p class="eyebrow">04 / What the experiment covers</p>
+                    <h3>Scope &amp; limitations</h3>
+                    <p>This application is designed for learning and experimentation. The current model uses historical data and does not evaluate weather, currents, tides, vessel draft, traffic or current navigation restrictions.</p>
+                    <ul class="project-tips">
+                        <li><strong>“Shortest” has a specific meaning:</strong> the result minimizes the network’s stored weights. It does not estimate sailing time, fuel consumption or voyage safety.</li>
+                        <li><strong>Location matching is simplified:</strong> nearest-point searches use squared longitude/latitude distance rather than a distance measured over the Earth’s surface.</li>
+                        <li><strong>Connections have direction:</strong> a route may exist in one direction but be unavailable in the reverse direction. Disconnected locations return a message.</li>
+                        <li><strong>Data has gaps:</strong> port metadata can be incomplete or outdated, and network points can be some distance from the requested place.</li>
+                        <li><strong>Some features are exploratory:</strong> the Fastest and Safest preferences remain placeholders. Map display and place searches require their external services to be available.</li>
+                    </ul>
+                    <div class="project-outlook"><h4>Further experiments</h4><p>Possible extensions include geographic-distance matching, newer network data, clearer links between ports and network nodes, and additional routing constraints.</p></div>
+                </section>
+                <footer class="project-credit">A university project by Panagiotis Georgoulias.</footer>
+            </div>
+        </div>
+    </div>
+</dialog>

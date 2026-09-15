@@ -1,0 +1,2 @@
+# Optional: only needed to rebuild data/ports.geojson from the source XLS.
+xlrd==2.0.1
